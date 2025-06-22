@@ -2,420 +2,482 @@
 
 I built this resume with Bulma - my favorite CSS framework. I wanted it to be part of my GitHub profile, but also something that could be printed and submitted as a hard copy. You can find a gussied up version of this over at github.com/burkeholland/bulma-resume. Feel free to fork it and make it your own. 
 
-In any event, did you know that you can put emoji in HTML comments? 👍.
+Thanks for checking out my guts!
 -->
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"
+    />
+    <title>Burke Holland - Resume</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" />
-  <title>Burke Holland - Resume</title>
-</head>
-
-<body>
-  <div class="section pt-0">
-    <div class="container is-max-desktop">
-      <section class="section pb-0">
-        <header>
-          <nav class="breadcrumb is-size-7 mb-0">
-            <ul>
-              <li>
-                <span class="icon-text">
-                  <span class="icon mr-0">
-                    <i class="fas fa-envelope"></i>
+  <body>
+    <div class="section pt-0">
+      <div class="container is-max-desktop">
+        <section class="section pb-0">
+          <header>
+            <nav class="breadcrumb is-size-7 mb-0">
+              <ul>
+                <li>
+                  <span class="icon-text">
+                    <span class="icon mr-0">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                    <span>
+                      <a class="" href="mailto:burkeholland@gmail.com"
+                        >burkeholland@gmail.com</a
+                      >
+                    </span>
                   </span>
-                  <span>
-                    <a class="" href="mailto:burkeholland@gmail.com">burkeholland@gmail.com</a>
+                </li>
+                <li>
+                  <span class="icon-text">
+                    <span class="icon ml-1 mr-0">
+                      <i class="fas fa-phone"></i>
+                    </span>
+                    <span class="mr-2">931-446-2005</span>
                   </span>
+                </li>
+              </ul>
+            </nav>
+            <div class="columns is-vcentered">
+              <div class="column">
+                <h1 class="has-text-info-dark is-size-1 has-text-weight-light">
+                  BURKE <span class="has-text-weight-bold">HOLLAND</span>
+                </h1>
+                <div class="tags mt-2">
+                  <span class="tag is-info is-light">Microsoft</span>
+                  <span class="tag is-info is-light">VS Code</span>
+                  <span class="tag is-info is-light">GitHub Copilot</span>
+                  <span class="tag is-info is-light">Developer Advocate</span>
+                  <span class="tag is-info is-light">Speaker</span>
+                  <span class="tag is-info is-light">Author</span>
+                  <span class="tag is-info is-light">Community Leader</span>
+                </div>
+                <p class="has-text-grey is-size-7">
+                  Principal Developer Advocate at Microsoft leading the
+                  Developer Tools Advocacy team. Grew VS Code from 6M to 40M users and
+                  built a developer video presence from zero to 800K+ YouTube
+                  subscribers. I build content platforms and scale developer
+                  programs.
+                </p>
+              </div>
+              <div class="column is-narrow is-hidden-mobile">
+                <figure class="image is-128x128">
+                  <!-- Replace "octocat" with your GitHub username to automaticaly pull in your github avatar -->
+                  <img
+                    class="is-rounded"
+                    src="https://github.com/burkeholland.png"
+                    alt="Burke Holland avatar"
+                  />
+                </figure>
+              </div>
+            </div>
+          </header>
+        </section>
+        <section class="section pb-0 pt-0" id="social">
+          <hr class="mb-2" />
+          <div class="level mb-0 is-mobile is-size-7">
+            <div class="level-item">
+              <span class="icon-text">
+                <span class="icon has-text-info">
+                  <i class="fab fa-github"></i>
                 </span>
+                <span>
+                  <a href="http://github.com/burkeholland">
+                    <span class="is-hidden-mobile"
+                      >github.com/burkeholland</span
+                    >
+                    <span class="is-hidden-tablet">GitHub</span>
+                  </a>
+                </span>
+              </span>
+            </div>
+            <div class="level-item">
+              <span class="icon-text">
+                <span class="icon has-text-info">
+                  <i class="fab fa-twitter"></i>
+                </span>
+                <span>
+                  <a href="http://twitter.com/burkeholland">
+                    <span class="is-hidden-mobile"
+                      >twitter.com/burkeholland</span
+                    >
+                    <span class="is-hidden-tablet">Twitter</span>
+                  </a>
+                </span>
+              </span>
+            </div>
+            <div class="level-item">
+              <span class="icon-text has-text-info">
+                <span class="icon">
+                  <i class="fab fa-linkedin"></i>
+                </span>
+                <span>
+                  <a href="http://linkedin.com/in/burkeholland">
+                    <span class="is-hidden-mobile"
+                      >linkedin.com/in/burkeholland</span
+                    >
+                    <span class="is-hidden-tablet">LinkedIn</span>
+                  </a>
+                </span>
+              </span>
+            </div>
+          </div>
+          <hr class="mt-2" />
+        </section>
+        <section class="section pt-0">
+          <!-- <div id="keyAchievements" class="mt-3">
+            <p class="is-size-4 has-text-info-dark mb-4">Key Achievements</p>
+            <ul class="content is-size-6">
+              <li>
+                <strong
+                  >Grew Visual Studio Code from 6M to 40M monthly active
+                  users</strong
+                >
+                through product leadership, community strategy, and content
+                innovation.
               </li>
               <li>
-                <span class="icon-text">
-                  <span class="icon ml-1 mr-0">
-                    <i class="fas fa-phone"></i>
-                  </span>
-                  <span class="mr-2">931-446-2005</span>
-                </span>
+                <strong
+                  >Scaled YouTube presence from 26K to 800K subscribers</strong
+                >
+                by pioneering both short-form and enagaging long-form technical
+                content in a reusable format.
+              </li>
+              <li>
+                <strong>Built TikTok audience from 0 to 600K followers</strong>
+                by adapting developer storytelling to short-form mobile-first
+                platforms.
+              </li>
+              <li>
+                <strong
+                  >Led launch efforts for GitHub Copilot, Copilot Chat,
+                  vscode.dev, Codespaces, and Remote Development</strong
+                >, shaping how millions of developers work today.
+              </li>
+              <li>
+                <strong>Co-created VS Code Day</strong>, now one of Microsoft’s
+                largest developer events.
               </li>
             </ul>
-          </nav>
-          <div class="columns is-vcentered">
-            <div class="column">
-              <h1 class="has-text-info-dark is-size-1 has-text-weight-light">
-                BURKE <span class="has-text-weight-bold">HOLLAND</span>
-              </h1>
-              <p class="has-text-grey-light">
-                I am a technologist, author and speaker working in the
-                specialized field of Developer Relations.
-              </p>
-            </div>
-            <div class="column is-narrow is-hidden-mobile">
-              <figure class="image is-128x128">
-                <!-- Replace "octocat" with your GitHub username to automaticaly pull in your github avatar -->
-                <img class="is-rounded" src="https://github.com/burkeholland.png" alt="Burke Holland avatar" />
-              </figure>
-            </div>
+          </div> -->
+          <div class="box">
+            <h2 class="title is-4 has-text-info-dark">Key Achievements</h2>
+            <hr class="is-info" style="width: 60px; margin: 0 auto;">
+            <ul class="content">
+      <li><span class="icon has-text-info mr-1"><i class="fas fa-chart-line fa-fw"></i></span><strong>Grew Visual Studio Code</strong> from 6M to 40M users through product leadership and ecosystem strategy.</li>
+      <li><span class="icon has-text-info mr-1"><i class="fas fa-video fa-fw"></i></span><strong>Scaled YouTube</strong> from 26K to 800K+ subscribers via short-form content with 100K+ average views.</li>
+      <li><span class="icon has-text-info mr-1"><i class="fas fa-mobile-alt fa-fw"></i></span><strong>Built TikTok channel</strong> from 0 to 600K by adapting dev content to mobile-first formats.</li>
+      <li><span class="icon has-text-info mr-1"><i class="fas fa-rocket fa-fw"></i></span><strong>Led launches</strong> for GitHub Copilot, vscode.dev, Codespaces, and Remote Development across teams.</li>
+      <li><span class="icon has-text-info mr-1"><i class="fas fa-users fa-fw"></i></span><strong>Co-created VS Code Day</strong>, now a major Microsoft developer event.</li>
+    </ul>
           </div>
-        </header>
-      </section>
-      <section class="section pb-0 pt-0" id="social">
-        <hr class="mb-2" />
-        <div class="level mb-0 is-mobile is-size-7">
-          <div class="level-item">
-            <span class="icon-text">
-              <span class="icon has-text-info">
-                <i class="fab fa-github"></i>
-              </span>
-              <span>
-                <a href="http://github.com/burkeholland">
-                  <span class="is-hidden-mobile">github.com/burkeholland</span>
-                  <span class="is-hidden-tablet">GitHub</span>
-                </a>
-              </span>
-            </span>
-          </div>
-          <div class="level-item">
-            <span class="icon-text">
-              <span class="icon has-text-info">
-                <i class="fab fa-twitter"></i>
-              </span>
-              <span>
-                <a href="http://twitter.com/burkeholland">
-                  <span class="is-hidden-mobile">twitter.com/burkeholland</span>
-                  <span class="is-hidden-tablet">Twitter</span>
-                </a>
-              </span>
-            </span>
-          </div>
-          <div class="level-item">
-            <span class="icon-text has-text-info">
-              <span class="icon">
-                <i class="fab fa-linkedin"></i>
-              </span>
-              <span>
-                <a href="http://linkedin.com/in/burkeholland">
-                  <span class="is-hidden-mobile">linked.com/in/burkeholland</span>
-                  <span class="is-hidden-tablet">LinkedIn</span>
-                </a>
-              </span>
-            </span>
-          </div>
-        </div>
-        <hr class="mt-2" />
-      </section>
-      <section class="section pt-0">
-        <div id="skills" class="columns mt-3">
-          <div class="column is-2 pb-0">
-            <p class="is-size-4 has-text-info-dark">Skills</p>
-          </div>
-          <div class="column">
-            <div>
-              <p class="has-text-weight-bold pt-1">Technical</p>
-              <p>
-                JavaScript, Node, Web Platform, SQL, React, Vue,
-                Containers/Docker, C#, Azure, Produt Management, User
-                Experience,
-              </p>
-            </div>
-            <div class="mt-1">
-              <p class="has-text-weight-bold pt-1">Writing</p>
-              <p>
-                Numerous articles on
-                <a href="https://burkeholland.dev">My personal blog</a>,
-                <a href="https://www.smashingmagazine.com/author/burke-holland/">Smashing Magazine</a>,
-                <a href="https://css-tricks.com/author/burkeholland/">CSS Tricks</a>,
-                <a href="https://www.freecodecamp.org/news/author/burkeholland/">FreeCodeCamp</a>,
-                <a href="https://hackernoon.com/u/burkeholland">Hackernoon</a>,
-                <a href="https://thenextweb.com/author/burke-holland-2/">The Next Web</a>,
-                <a href="http://www.telerik.com/blogs/author/burke-holland">Telerik Blogs</a>,
-                <a href="http://www.adobe.com/devnet/author_bios/burke-holland.html">Adobe Developer Connection</a>,
-                <a href="http://www.sitepoint.com/author/buholland/">SitePoint</a>, NetMag (Physical) and more
-              </p>
-            </div>
-            <div class="mt-1">
-              <p class="has-text-weight-bold pt-1">Speaking</p>
-              <p>
-                Speaker at
-                <a href="https://www.youtube.com/watch?v=s0A0hL7nJXw">JSConf</a>,
-                <a href="https://www.youtube.com/watch?v=T5ULvFk134U">MSFT Build</a>
-                &amp;
-                <a href="https://www.youtube.com/watch?v=mf6CQrSozZQ">MSFT Ignite</a>,
-                <a href="https://www.youtube.com/watch?v=T6sW1Dk9B4E">GitHub Satellite</a>,
-                <a href="https://www.youtube.com/watch?v=umC11SeqtZw&amp;t=272s">FluentConf</a>,
-                <a href="https://www.youtube.com/watch?v=TQoV0Jt3IJg&amp;t=18s">ng-conf</a>, Angle Brackets, TechDays,
-                CodeMash, ThatConference,
-                DevReach, NDC,
-                <a href="https://www.youtube.com/watch?v=k8uA4qdLYJo&amp;t=140s">Modern Web Conference</a>,
-                <a href="https://www.youtube.com/watch?v=z_JJerobnFA&amp;t=166s">TelerikNEXT</a>, jQuery Conference and
-                more. Track Chair for
-                <a href="https://www.youtube.com/watch?v=lymOGiuGtlQ">QCon.</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div id="contributions" class="columns mt-3">
-          <div class="column is-2 pb-0">
-            <p class="is-size-4 has-text-info-dark">Projects</p>
-          </div>
-          <div class="column">
-            <p>
-              <a href="https://vscodecandothat.com">VS Code Can Do That</a>,
-              <a href="https://theurlist.com">The Urlist</a>,
-              <a href="https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets">Simple
-                React Snippets</a>,
-              <a href="https://marketplace.visualstudio.com/items?itemName=burkeholland.react-food-truck">React Food
-                Truck</a>,
-              <a href="http://instasharp.github.io/InstaSharp/">Instasharp</a>,
-              <a href="http://kendo-labs.github.io/angular-kendo/">Angular Kendo UI</a>, and more
-            </p>
-          </div>
-        </div>
-        <div id="experience">
-          <div class="columns is-desktop mt-3">
+          <div id="publicImpact" class="columns mt-3">
             <div class="column is-2 pb-0">
-              <p class="is-size-4 has-text-info-dark">Experience</p>
+              <p class="is-size-4 has-text-info-dark">Public Impact</p>
             </div>
             <div class="column">
-              <div class="mb-5">
-                <b>Microsoft</b>
-                <div class="level has-text-weight-bold is-size-7 is-mobile">
-                  <div class="level-left">
-                    <div class="level-item">
-                      <p>Principal Developer Advocate</p>
-                    </div>
-                  </div>
-                  <div class="level-right">
-                    <div class="level-item">
-                      <p>June 2017 - Present</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="content">
-                  <ul>
-                    <li>
-                      Leading the Developer Cloud team, responsible for growth of VS Code, GitHub Copilot and remote
-                      development experiences.
-                    </li>
-                    <li>
-                      Early adopter of short-form video at Microsoft using TikTok and YouTube Shorts. Grew the VS Code
-                      <a href="https://tiktok.com/@vscode">TikTok</a> and <a href="https://youtube.com/@code">YouTube
-                        channels</a> from <b>26K</b> to <b>476K</b> subscribers with <b>240% YoY growth</b> in year 1.
-                    </li>
-                    <li>
-                      Lead multi-tactic initiatives across engineering, marketing and advocacy including the launch of
-                      <a href="https://code.visualstudio.com/docs/copilot/overview">GitHub Copilot and Copilot Chat</a>,
-                      <a href="vscode.dev">vscode.dev</a>, GitHub Codespaces and <a href="https://containers.dev">VS
-                        Code Remote Development</a>,
-                      <a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">Jupyter Noteboks in VS
-                        Code</a>,
-                      <a href="https://azure.microsoft.com/en-us/services/app-service/static/">Azure Static Web
-                        Apps</a>,
-                      <a href="https://docs.microsoft.com/en-us/learn/paths/build-javascript-applications-nodejs/">comprehensive
-                        course for Node.js developers</a>
-                      built on Microsoft's Learn Platform.
-                    </li>
-                    <li>
-                      Co-creator of <a href="aka.ms/vscodeday">VS Code Day</a>, now one of the largest
-                      developer events at Microsoft.
-                    </li>
-                    <li>
-                      Leading content creator at Microsoft with YouTube content that regularly reaches <b>100K+
-                        views</b>.
-                    </li>
-                  </ul>
-                </div>
+              <ul class="content">
+                <li>
+                  <strong>Hosted and co-produced</strong>
+                  <a href="https://aka.ms/vscodeday">VS Code Day</a>, drawing
+                  20K+ global registrants and now a flagship Microsoft developer
+                  event.
+                </li>
+                <li>
+                  <strong>Frequent keynote speaker and panelist</strong> at
+                  global conferences including Build, Ignite, GitHub Universe,
+                  QCon, and FluentConf.
+                </li>
+                <li>
+                  <strong>Regular podcast guest</strong> on shows like JS Party,
+                  The Changelog, and Modern Web, covering AI, tooling, and
+                  developer culture.
+                </li>
+                <li>
+                  <strong>Published author</strong> across major dev media
+                  including Smashing Magazine, CSS-Tricks, FreeCodeCamp,
+                  SitePoint, and The Next Web.
+                </li>
+                <li>
+                  <strong>Built VS Code's developer brand presence</strong>
+                  across YouTube, TikTok, and social — reaching millions of devs
+                  with hands-on content and humor.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="experience">
+            <div class="columns is-desktop mt-3">
+              <div class="column is-2 pb-0">
+                <p class="is-size-4 has-text-info-dark">Experience</p>
               </div>
-              <div class="mb-5">
-                <b>Progress Software / Telerik</b>
-                <div class="level has-text-weight-bold is-size-7 is-mobile">
-                  <div class="level-left">
-                    <div class="level-item">
-                      <p>Director of Developer Relations</p>
+              <div class="column">
+                <div class="mb-5">
+                  <b>Microsoft</b>
+                  <div class="level has-text-weight-bold is-size-7 is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <p>Principal Program Manager - DevTools Lead</p>
+                      </div>
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <p>June 2017 - Present</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="level-right">
-                    <div class="level-item">
-                      <p>September 2011 - June 2017</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="content">
-                  <ul>
-                    <li>
-                      Leading team of 11 developer advocates covering
-                      Telerik's entire portfolio of tools and frameworks,
-                      including Developer Tools and SaaS offerings.
-                    </li>
-                    <li>
-                      Co-creator of the
-                      <a href="http://developer.telerik.com">Telerik Developer Network</a>
-                      site and community which is now the thrid largest
-                      contributor to the developer trial journey.
-                    </li>
-                    <li>
-                      Responsible for planning and executing on all
-                      initiatives to build and cultivate the Telerik
-                      community.
-                    </li>
-                    <li>
-                      Helped guide the open source
-                      <a href="http://www.nativescript.org">NativeScript</a>
-                      project to 6x growth (downloads) over 8 months.
-                    </li>
-                    <li>
-                      Oversee new product launches and align developer
-                      programs with Marketing, Sales and Demand Generation.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="mb-5">
-                <b>O'Charley's Inc</b>
-                <div class="level has-text-weight-bold is-size-7 is-mobile">
-                  <div class="level-left">
-                    <div class="level-item">
-                      <p>Sr. Programmer Analyst</p>
-                    </div>
-                  </div>
-                  <div class="level-right">
-                    <div class="level-item">
-                      <p>November 2007 - September 2011</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="content">
-                  <ul>
-                    <li>
-                      Designed and built large scale internal and external
-                      applications to support 5 billion dollars worth of
-                      business processes.
-                    </li>
-                    <li>
-                      Moved company to web services for commonly used business
-                      processes.
-                    </li>
-                    <li>
-                      Planned and helped build centralized ETL system to read
-                      and import to/from any enterprise system.
-                    </li>
-                    <li>
-                      Mentored developers and provided instruction and
-                      feedback on software design and implementation.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="mb-5">
-                <b>Speakerheart</b>
-                <div class="level has-text-weight-bold is-size-7 is-mobile">
-                  <div class="level-left">
-                    <div class="level-item">
-                      <p>Sr. Software Engineer</p>
-                    </div>
-                  </div>
-                  <div class="level-right">
-                    <div class="level-item">
-                      <p>December 2006 - November 2007</p>
-                    </div>
+                  <div class="content">
+                    <ul>
+                      <li>
+                        Leading the Developer Tools team, responsible for growth
+                        of VS Code, GitHub Copilot and GitHub connected
+                        experiences.
+                      </li>
+                      <li>
+                        Early adopter of short-form video at Microsoft using
+                        TikTok and YouTube Shorts. Grew the VS Code
+                        <a href="https://tiktok.com/@vscode">TikTok</a> and
+                        <a href="https://youtube.com/@code">YouTube channels</a>
+                        from <b>26K</b> to <b>476K</b> subscribers with
+                        <b>240% YoY growth</b> in year 1.
+                      </li>
+                      <li>
+                        Lead multi-tactic initiatives across engineering,
+                        marketing and advocacy including the launch of
+                        <a
+                          href="https://code.visualstudio.com/docs/copilot/overview"
+                          >GitHub Copilot and Copilot Chat</a
+                        >, <a href="vscode.dev">vscode.dev</a>, GitHub
+                        Codespaces and
+                        <a href="https://containers.dev"
+                          >VS Code Remote Development</a
+                        >,
+                        <a
+                          href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks"
+                          >Jupyter Noteboks in VS Code</a
+                        >,
+                        <a
+                          href="https://azure.microsoft.com/en-us/services/app-service/static/"
+                          >Azure Static Web Apps</a
+                        >,
+                        <a
+                          href="https://docs.microsoft.com/en-us/learn/paths/build-javascript-applications-nodejs/"
+                          >comprehensive course for Node.js developers</a
+                        >
+                        built on Microsoft's Learn Platform.
+                      </li>
+                      <li>
+                        Co-creator of
+                        <a href="aka.ms/vscodeday">VS Code Day</a>, now one of
+                        the largest developer events at Microsoft.
+                      </li>
+                      <li>
+                        Leading content creator at Microsoft with YouTube
+                        content that regularly reaches <b>100K+ views</b>.
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div class="content">
-                  <ul>
-                    <li>Lead developer for very large Flex application</li>
-                    <li>
-                      Optimized large web application for quick delivery and
-                      performance over low bandwidth connection
-                    </li>
-                    <li>
-                      Implemented security solution for web facing e-commerce
-                      platform
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="mb-5">
-                <b>Ardent Health Service</b>
-                <div class="level has-text-weight-bold is-size-7 is-mobile">
-                  <div class="level-left">
-                    <div class="level-item">
-                      <p>Manager of Collaborative Developpment</p>
+                <div class="mb-5">
+                  <b>Progress Software / Telerik</b>
+                  <div class="level has-text-weight-bold is-size-7 is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <p>Director of Developer Relations</p>
+                      </div>
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <p>September 2011 - June 2017</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="level-right">
-                    <div class="level-item">
-                      <p>August 2004 - December 2006</p>
-                    </div>
+                  <div class="content">
+                    <ul>
+                      <li>
+                        Leading team of 11 developer advocates covering
+                        Telerik's entire portfolio of tools and frameworks,
+                        including Developer Tools and SaaS offerings.
+                      </li>
+                      <li>
+                        Co-creator of the
+                        <a href="http://developer.telerik.com"
+                          >Telerik Developer Network</a
+                        >
+                        site and community which is now the thrid largest
+                        contributor to the developer trial journey.
+                      </li>
+                      <li>
+                        Responsible for planning and executing on all
+                        initiatives to build and cultivate the Telerik
+                        community.
+                      </li>
+                      <li>
+                        Drove 6x growth in downloads for
+                        <a href="http://www.nativescript.org">NativeScript</a>
+                        project to <b>6x growth</b> (downloads) over 8 months.
+                      </li>
+                      <li>
+                        Oversee new product launches and align developer
+                        programs with Marketing, Sales and Demand Generation.
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div class="content">
-                  <ul>
-                    <li>
-                      Managed migration of WebSphere Java platform to .NET
-                    </li>
-                    <li>
-                      Developer on internal and physician software solutions
-                      built on ASP.NET platform
-                    </li>
-                    <li>
-                      Developer on and manager of Oracle Data Warehouse
-                      solution
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="mb-5">
-                <b>Sara Lee Foods</b>
-                <div class="level has-text-weight-bold is-size-7 is-mobile">
-                  <div class="level-left">
-                    <div class="level-item">
-                      <p>Integration Analyst</p>
+                <div class="mb-5">
+                  <b>O'Charley's Inc</b>
+                  <div class="level has-text-weight-bold is-size-7 is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <p>Sr. Programmer Analyst</p>
+                      </div>
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <p>November 2007 - September 2011</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="level-right">
-                    <div class="level-item">
-                      <p>August 2003 - August 2004</p>
-                    </div>
+                  <div class="content">
+                    <ul>
+                      <li>
+                        Designed and built large scale internal and external
+                        applications to support 5 billion dollars worth of
+                        business processes.
+                      </li>
+                      <li>
+                        Moved company to web services for commonly used business
+                        processes.
+                      </li>
+                      <li>
+                        Planned and helped build centralized ETL system to read
+                        and import to/from any enterprise system.
+                      </li>
+                      <li>
+                        Mentored developers and provided instruction and
+                        feedback on software design and implementation.
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div class="content">
-                  <ul>
-                    <li>
-                      Ported legacy shop floor data collection applications to
-                      ASP.NET
-                    </li>
-                    <li>
-                      Implemented and supported Time and Attendance system for
-                      manufacturing facilities
-                    </li>
-                    <li>
-                      Worked on large scale network conversion from token ring
-                      to Ethernet
-                    </li>
-                  </ul>
+                <div class="mb-5">
+                  <b>Speakerheart</b>
+                  <div class="level has-text-weight-bold is-size-7 is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <p>Sr. Software Engineer</p>
+                      </div>
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <p>December 2006 - November 2007</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <ul>
+                      <li>Lead developer for very large Flex application</li>
+                      <li>
+                        Optimized large web application for quick delivery and
+                        performance over low bandwidth connection
+                      </li>
+                      <li>
+                        Implemented security solution for web facing e-commerce
+                        platform
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mb-5">
+                  <b>Ardent Health Service</b>
+                  <div class="level has-text-weight-bold is-size-7 is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <p>Manager of Collaborative Developpment</p>
+                      </div>
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <p>August 2004 - December 2006</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <ul>
+                      <li>
+                        Managed migration of WebSphere Java platform to .NET
+                      </li>
+                      <li>
+                        Developer on internal and physician software solutions
+                        built on ASP.NET platform
+                      </li>
+                      <li>
+                        Developer on and manager of Oracle Data Warehouse
+                        solution
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mb-5">
+                  <b>Sara Lee Foods</b>
+                  <div class="level has-text-weight-bold is-size-7 is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <p>Integration Analyst</p>
+                      </div>
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <p>August 2003 - August 2004</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <ul>
+                      <li>
+                        Ported legacy shop floor data collection applications to
+                        ASP.NET
+                      </li>
+                      <li>
+                        Implemented and supported Time and Attendance system for
+                        manufacturing facilities
+                      </li>
+                      <li>
+                        Worked on large scale network conversion from token ring
+                        to Ethernet
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div id="education">
-          <div class="columns is-desktop mt-3">
-            <div class="column is-2 pb-0">
-              <p class="is-size-4 has-text-info-dark">Education</p>
-            </div>
-            <div class="column">
-              <b>University Of Tennessee at Martin class of 2002</b>
-              <p>Bachelors of Science, Business Administration</p>
-              <p><b>Major: </b>Information Systems</p>
+          <div id="education">
+            <div class="columns is-desktop mt-3">
+              <div class="column is-2 pb-0">
+                <p class="is-size-4 has-text-info-dark">Education</p>
+              </div>
+              <div class="column">
+                <b>University Of Tennessee at Martin class of 2002</b>
+                <p>Bachelors of Science, Business Administration</p>
+                <p><b>Major: </b>Information Systems</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
