@@ -1,377 +1,578 @@
-<!-- Hello fellow developer! Or person who accidentally got here and has no idea what is happening right now.
-
-I built this resume with Bulma - my favorite CSS framework. I wanted it to be part of my GitHub profile, but also something that could be printed and submitted as a hard copy. You can find a gussied up version of this over at github.com/burkeholland/bulma-resume. Feel free to fork it and make it your own. 
-
-Thanks for checking out my guts!
--->
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"
-    />
-    <title>Burke Holland - Resume</title>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Burke Holland - AI Developer Relations Leader</title>
+    <style>
+        :root {
+            --primary: #2f80ed;
+            --secondary: #1a1a1a;
+            --text: #333;
+            --text-light: #666;
+            --bg-sidebar: #f8f9fa;
+            --border: #e1e4e8;
+            --spacing-unit: 1.5rem;
+        }
 
-  <body>
-    <div class="section pt-0">
-      <div class="container is-max-desktop">
-        <section class="section pb-0">
-          <header>
-            <nav class="breadcrumb is-size-7 mb-0">
-              <ul>
-                <li>
-                  <span class="icon-text">
-                    <span class="icon mr-0">
-                      <i class="fas fa-envelope"></i>
-                    </span>
-                    <span>
-                      <a class="" href="mailto:burkeholland@gmail.com"
-                        >burkeholland@gmail.com</a
-                      >
-                    </span>
-                  </span>
-                </li>
-                <li>
-                  <span class="icon-text">
-                    <span class="icon ml-1 mr-0">
-                      <i class="fas fa-phone"></i>
-                    </span>
-                    <span class="mr-2">931-446-2005</span>
-                  </span>
-                </li>
-              </ul>
-            </nav>
-            <div class="columns is-vcentered">
-              <div class="column">
-                <h1 class="has-text-info-dark is-size-1 has-text-weight-light">
-                  BURKE <span class="has-text-weight-bold">HOLLAND</span>
-                </h1>
-                <div class="tags mt-2">
-                  <span class="tag is-info is-light">Microsoft</span>
-                  <span class="tag is-info is-light">VS Code</span>
-                  <span class="tag is-info is-light">GitHub Copilot</span>
-                  <span class="tag is-info is-light">Developer Advocate</span>
-                  <span class="tag is-info is-light">Speaker</span>
-                  <span class="tag is-info is-light">Author</span>
-                  <span class="tag is-info is-light">Community Leader</span>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: #fff;
+        }
+
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .resume-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .sidebar {
+            background: var(--bg-sidebar);
+            padding: var(--spacing-unit);
+            border-right: 1px solid var(--border);
+            grid-column: 1;
+            grid-row: 1 / 4;
+        }
+
+        .header {
+            padding: 2.5rem 2.5rem 1rem 2.5rem;
+            border-bottom: 1px solid var(--border);
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .main-content {
+            padding: 1.5rem 2.5rem 2rem 2.5rem;
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .avatar-container { text-align: center; margin-bottom: 1.5rem; }
+
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .contact-info { margin-bottom: 1.5rem; font-size: 0.85rem; }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.4rem;
+            color: var(--text-light);
+        }
+
+        .contact-item i { width: 22px; color: var(--primary); font-size: 0.9rem; }
+
+        .section-title-sm {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.2rem;
+            display: inline-block;
+        }
+
+        .competencies-section { margin-bottom: 1.5rem; }
+
+        .sidebar-list { list-style: none; font-size: 0.85rem; }
+        .sidebar-list li { margin-bottom: 0.6rem; line-height: 1.4; }
+        .sidebar-list li strong { display: block; font-weight: 600; color: var(--text); }
+        .sidebar-list li span { color: var(--text-light); font-size: 0.8rem; }
+        .sidebar-list li a { font-weight: 500; }
+
+        .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+        .metric-card {
+            background: #fff;
+            padding: 0.75rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .metric-value { font-size: 1.1rem; font-weight: 800; color: var(--primary); display: block; }
+        .metric-label { font-size: 0.7rem; color: var(--text-light); font-weight: 500; }
+
+        .name {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+            letter-spacing: -1px;
+        }
+        .name span { color: var(--primary); }
+
+        .title-role {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .summary {
+            font-size: 1rem;
+            color: var(--secondary);
+            max-width: 800px;
+            line-height: 1.55;
+        }
+        .summary strong { color: var(--primary); font-weight: 600; }
+
+        .main-section { margin-bottom: 2rem; }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .section-title i { margin-right: 0.6rem; color: var(--primary); font-size: 1.1rem; }
+
+        .experience-item {
+            margin-bottom: 1.75rem;
+            position: relative;
+            padding-left: 16px;
+            border-left: 3px solid var(--border);
+        }
+        .experience-item:hover { border-left-color: var(--primary); }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .job-title { font-size: 1.1rem; font-weight: 700; }
+        .company { font-weight: 600; color: var(--primary); }
+        .dates { font-size: 0.85rem; color: var(--text-light); }
+
+        .job-description li { margin-bottom: 0.5rem; color: var(--text); font-size: 0.95rem; }
+        .job-description ul { padding-left: 1.1rem; }
+        .job-description strong { font-weight: 600; }
+
+        .job-note {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .experience-item.plain {
+            border: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .job-title.edu {
+            font-size: 1rem;
+        }
+
+        .resume-footer {
+            text-align: center;
+            padding: 0.75rem;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+            background: var(--bg-sidebar);
+        }
+        .resume-footer a { font-weight: 600; }
+
+        /* PRINT STYLING - One Page Optimized */
+        @media print {
+            @page { margin: 0.45cm; size: letter; }
+
+            body {
+                font-size: 8.8pt;
+                background: white;
+                color: #222;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                line-height: 1.38;
+            }
+
+            .print-hide { display: none !important; }
+
+            /* Keep footer on page 1 without pushing content to page 2 */
+            .resume-footer {
+                display: block !important;
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 0.18rem 0;
+                border-top: 1px solid var(--border);
+                background: #fff;
+                font-size: 7.5pt;
+                color: var(--text-light);
+                text-align: center;
+            }
+            .resume-footer a { color: var(--primary); text-decoration: none; font-weight: 600; }
+
+            /* Reserve space so fixed footer doesn't overlap content */
+            .resume-container { padding-bottom: 0.75rem; }
+
+            .resume-container {
+                display: block;
+                width: 100%;
+                max-width: none;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .header {
+                display: block;
+                padding: 0 0 0.65rem 0;
+                border: none;
+                margin-bottom: 0;
+                text-align: center;
+            }
+
+            .name {
+                font-size: 2.3rem;
+                margin-bottom: 0.15rem;
+                letter-spacing: -1px;
+                color: #000;
+                line-height: 1;
+            }
+            .name span { color: var(--primary); }
+            
+            .title-role {
+                font-size: 1.05rem;
+                font-weight: 300;
+                color: #555;
+                margin-bottom: 0.55rem;
+            }
+
+            .summary {
+                font-size: 9pt;
+                color: #333;
+                max-width: 100%;
+                line-height: 1.45;
+                margin-bottom: 0.45rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .sidebar {
+                display: block;
+                padding: 0;
+                margin: 0 0 0.7rem 0;
+                border: none;
+                background: none;
+            }
+            
+            .avatar-container { display: none; }
+
+            .contact-info {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                font-size: 8.5pt;
+                justify-content: center;
+                padding: 0.3rem 0;
+                margin: 0.2rem 0 0;
+            }
+            .contact-item { margin: 0; }
+            .contact-item i { color: var(--primary); }
+            .contact-item a { color: var(--primary); text-decoration: none; font-weight: 500; }
+
+            /* Trim sidebar content starting at Impact Metrics */
+            .competencies-section { display: none !important; }
+
+            .main-content { padding: 0; }
+            .main-section { margin-bottom: 0.8rem; }
+
+            .section-title {
+                font-size: 12pt;
+                font-weight: 700;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 0.25rem;
+                margin-bottom: 0.55rem;
+                color: #000;
+            }
+            .section-title i { display: inline-block; color: var(--primary); }
+
+            .experience-item {
+                border-left: 3px solid var(--border);
+                padding-left: 16px;
+                margin-bottom: 0.75rem;
+                break-inside: avoid;
+            }
+
+            .job-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-bottom: 0.4rem;
+                flex-wrap: wrap;
+            }
+            
+            .job-title { font-size: 10.5pt; font-weight: 700; color: #000; }
+            .company { font-weight: 600; color: var(--primary); }
+            .dates { font-size: 8pt; font-weight: 600; color: #000; }
+
+            .job-description ul { padding-left: 1.1rem; margin-top: 0.25rem; }
+            .job-description li {
+                margin-bottom: 0.22rem;
+                font-size: 9pt;
+                color: #333;
+            }
+            .job-description strong { color: #000; font-weight: 700; }
+
+            .job-note {
+                font-size: 8.8pt;
+                line-height: 1.35;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume-container { grid-template-columns: 1fr; }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                grid-column: 1;
+                grid-row: auto;
+            }
+            .header, .main-content { grid-column: 1; grid-row: auto; }
+            .main-content { padding: 1.5rem; }
+            .name { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container">
+    
+    <header class="header">
+        <h1 class="name">BURKE <span>HOLLAND</span></h1>
+        <h2 class="title-role">AI Developer Relations Leader</h2>
+        <p class="summary">
+            Developer Relations leader who builds programs, manages teams, and runs GTM for AI developer tools.
+            Led cross-org launches for <strong>GitHub Copilot Free Tier</strong>, <strong>Agent Mode</strong>, and <strong>CLI/SDK</strong>, and helped grow VS Code from 6M to 40M users.
+        </p>
+    </header>
+
+    <aside class="sidebar">
+        <div class="avatar-container">
+            <img src="https://github.com/burkeholland.png" alt="Burke Holland" class="avatar">
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Nashville, TN</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:burkeholland@gmail.com">burkeholland@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/burkeholland">github.com/burkeholland</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://linkedin.com/in/burkeholland">/in/burkeholland</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-twitter"></i>
+                <a href="https://twitter.com/burkeholland">@burkeholland</a>
+            </div>
+        </div>
+
+        <div class="competencies-section">
+            <h3 class="section-title-sm">Impact Metrics</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-value">6M→40M</span>
+                    <span class="metric-label">VS Code Users</span>
                 </div>
-                <p class="has-text-grey is-size-7">
-                  Principal Developer Advocate at Microsoft leading the
-                  Developer Tools Advocacy team. Grew VS Code from 6M to 40M
-                  users and built a developer video presence from zero to 800K+
-                  YouTube subscribers. I build content platforms and scale
-                  developer programs.
-                </p>
-              </div>
-              <div class="column is-narrow is-hidden-mobile">
-                <figure class="image is-128x128">
-                  <!-- Replace "octocat" with your GitHub username to automaticaly pull in your github avatar -->
-                  <img
-                    class="is-rounded"
-                    src="https://github.com/burkeholland.png"
-                    alt="Burke Holland avatar"
-                  />
-                </figure>
-              </div>
+                <div class="metric-card">
+                    <span class="metric-value">900K+</span>
+                    <span class="metric-label">YouTube Subs</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">600K</span>
+                    <span class="metric-label">TikTok Followers</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">6.1M</span>
+                    <span class="metric-label">Extension Installs</span>
+                </div>
             </div>
-          </header>
-        </section>
-        <section class="section pb-0 pt-0" id="social">
-          <hr class="mb-2" />
-          <div class="level mb-0 is-mobile is-size-7">
-            <div class="level-item">
-              <span class="icon-text">
-                <span class="icon has-text-info">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>
-                  <a href="http://github.com/burkeholland">
-                    <span class="is-hidden-mobile"
-                      >github.com/burkeholland</span
-                    >
-                    <span class="is-hidden-tablet">GitHub</span>
-                  </a>
-                </span>
-              </span>
-            </div>
-            <div class="level-item">
-              <span class="icon-text">
-                <span class="icon has-text-info">
-                  <i class="fab fa-twitter"></i>
-                </span>
-                <span>
-                  <a href="http://twitter.com/burkeholland">
-                    <span class="is-hidden-mobile"
-                      >twitter.com/burkeholland</span
-                    >
-                    <span class="is-hidden-tablet">Twitter</span>
-                  </a>
-                </span>
-              </span>
-            </div>
-            <div class="level-item">
-              <span class="icon-text has-text-info">
-                <span class="icon">
-                  <i class="fab fa-linkedin"></i>
-                </span>
-                <span>
-                  <a href="http://linkedin.com/in/burkeholland">
-                    <span class="is-hidden-mobile"
-                      >linkedin.com/in/burkeholland</span
-                    >
-                    <span class="is-hidden-tablet">LinkedIn</span>
-                  </a>
-                </span>
-              </span>
-            </div>
-          </div>
-          <hr class="mt-2" />
-        </section>
-        <section class="section pt-0">
-          <div class="box">
-            <h2 class="title is-4 has-text-info-dark">Key Achievements</h2>
-            <hr class="is-info" style="width: 60px; margin: 0 auto" />
-            <ul class="content">
-              <li>
-                <span class="icon has-text-info mr-1"
-                  ><i class="fas fa-chart-line fa-fw"></i></span
-                ><strong>Grew Visual Studio Code</strong> from 6M to 40M users
-                through product leadership and ecosystem strategy.
-              </li>
-              <li>
-                <span class="icon has-text-info mr-1"
-                  ><i class="fas fa-video fa-fw"></i></span
-                ><strong>Scaled YouTube</strong> from 26K to 800K+ subscribers
-                via short-form content with 100K+ average views.
-              </li>
-              <li>
-                <span class="icon has-text-info mr-1"
-                  ><i class="fas fa-mobile-alt fa-fw"></i></span
-                ><strong>Built TikTok channel</strong> from 0 to 600K by
-                adapting dev content to mobile-first formats.
-              </li>
-              <li>
-                <span class="icon has-text-info mr-1"
-                  ><i class="fas fa-rocket fa-fw"></i></span
-                ><strong>Led launches</strong> for GitHub Copilot, vscode.dev,
-                Codespaces, and Remote Development across teams.
-              </li>
-              <li>
-                <span class="icon has-text-info mr-1"
-                  ><i class="fas fa-users fa-fw"></i></span
-                ><strong>Co-created VS Code Day</strong>, now a major Microsoft
-                developer event.
-              </li>
+        </div>
+
+        <div class="competencies-section">
+            <h3 class="section-title-sm">Featured Writing</h3>
+            <ul class="sidebar-list">
+                <li>
+                    <a href="https://burkeholland.github.io/posts/opus-4-5-change-everything/">Opus 4.5 Is Going to Change Everything</a>
+                    <span>AI Models</span>
+                </li>
+                <li>
+                    <a href="https://burkeholland.github.io/posts/essential-custom-instructions/">Essential Custom Instructions for GitHub Copilot</a>
+                    <span>Prompt Engineering</span>
+                </li>
+                <li>
+                    <a href="https://burkeholland.github.io/posts/beast-mode-3-1/">Introducing Beast Mode 3.1</a>
+                    <span>AI-Assisted Coding</span>
+                </li>
+                <li>
+                    <a href="https://dev.to/burkeholland/how-to-replace-yourself-with-github-copilot-and-still-get-paid-4o1h">How to Replace Yourself with GitHub Copilot</a>
+                    <span>AI Workflow</span>
+                </li>
+                <li>
+                    <a href="https://code.visualstudio.com/blogs/2023/07/11/remote-tunnels">VS Code Remote Tunnels</a>
+                    <span>VS Code</span>
+                </li>
             </ul>
-          </div>
-          <div id="publicImpact" class="columns mt-3">
-            <div class="column is-2 pb-0">
-              <p class="is-size-4 has-text-info-dark">Public Impact</p>
-            </div>
-            <div class="column">
-              <ul class="content">
+        </div>
+
+        <div class="competencies-section">
+            <h3 class="section-title-sm">Open Source</h3>
+            <ul class="sidebar-list">
                 <li>
-                  <strong>Hosted and co-produced</strong>
-                  <a href="https://aka.ms/vscodeday">VS Code Day</a>, drawing
-                  20K+ global registrants and now a flagship Microsoft developer
-                  event.
+                    <a href="https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets">Simple React Snippets</a>
+                    <span>6.1M installs, Top VS Code Extension</span>
                 </li>
                 <li>
-                  <strong>Frequent keynote speaker and panelist</strong> at
-                  global conferences including Build, Ignite, GitHub Universe,
-                  QCon, and FluentConf.
+                    <a href="https://github.com/burkeholland/swapp">swapp CLI</a>
+                    <span>Azure Static Web Apps settings manager</span>
                 </li>
                 <li>
-                  <strong>Regular podcast guest</strong> on shows like JS Party,
-                  The Changelog, and Modern Web, covering AI, tooling, and
-                  developer culture.
+                    <a href="https://github.com/burkeholland">460+ Repositories</a>
+                    <span>React starters, NativeScript plugins, tooling</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="competencies-section">
+            <h3 class="section-title-sm">Talks</h3>
+            <ul class="sidebar-list">
+                <li>
+                    <strong>BRK111: GitHub Copilot as an AI Agent</strong>
+                    <span>Microsoft Build</span>
                 </li>
                 <li>
-                  <strong>Published author</strong> across major dev media
-                  including Smashing Magazine, CSS-Tricks, FreeCodeCamp,
-                  SitePoint, and The Next Web.
+                    <strong>View Source: What Gets Into VS Code</strong>
+                    <span>VS Code Day 2024 Keynote</span>
                 </li>
                 <li>
-                  <strong>Built VS Code's developer brand presence</strong>
-                  across YouTube, TikTok, and social — reaching millions of devs
-                  with hands-on content and humor.
+                    <strong>Discovering @horse_js Using ML</strong>
+                    <span>JSConf</span>
                 </li>
-              </ul>
-            </div>
-          </div>
-          <div id="experience">
-            <div class="columns is-desktop mt-3">
-              <div class="column is-2 pb-0">
-                <p class="is-size-4 has-text-info-dark">Experience</p>
-              </div>
-              <div class="column">
-                <div class="mb-5">
-                  <b>Microsoft</b>
-                  <div class="level has-text-weight-bold is-size-7 is-mobile">
-                    <div class="level-left">
-                      <div class="level-item">
-                        <p>Principal Program Manager - DevTools Lead</p>
-                      </div>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <section class="main-section">
+            <h3 class="section-title"><i class="fas fa-rocket"></i> Experience</h3>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Principal Developer Advocate</div>
+                        <div class="company">Microsoft</div>
                     </div>
-                    <div class="level-right">
-                      <div class="level-item">
-                        <p>June 2017 - Present</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="content">
-                    <ul>
-                      <li>
-                        Leading the Developer Tools team, responsible for growth
-                        of VS Code, GitHub Copilot and GitHub connected
-                        experiences.
-                      </li>
-                      <li>
-                        Early adopter of short-form video at Microsoft using
-                        TikTok and YouTube Shorts. Grew the VS Code
-                        <a href="https://tiktok.com/@vscode">TikTok</a> and
-                        <a href="https://youtube.com/@code">YouTube channels</a>
-                        from <b>26K</b> to <b>476K</b> subscribers with
-                        <b>240% YoY growth</b> in year 1.
-                      </li>
-                      <li>
-                        Lead multi-tactic initiatives across engineering,
-                        marketing and advocacy including the launch of
-                        <a
-                          href="https://code.visualstudio.com/docs/copilot/overview"
-                          >GitHub Copilot and Copilot Chat</a
-                        >, <a href="vscode.dev">vscode.dev</a>, GitHub
-                        Codespaces and
-                        <a href="https://containers.dev"
-                          >VS Code Remote Development</a
-                        >,
-                        <a
-                          href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks"
-                          >Jupyter Noteboks in VS Code</a
-                        >,
-                        <a
-                          href="https://azure.microsoft.com/en-us/services/app-service/static/"
-                          >Azure Static Web Apps</a
-                        >,
-                        <a
-                          href="https://docs.microsoft.com/en-us/learn/paths/build-javascript-applications-nodejs/"
-                          >comprehensive course for Node.js developers</a
-                        >
-                        built on Microsoft's Learn Platform.
-                      </li>
-                      <li>
-                        Co-creator of
-                        <a href="aka.ms/vscodeday">VS Code Day</a>, now one of
-                        the largest developer events at Microsoft.
-                      </li>
-                      <li>
-                        Leading content creator at Microsoft with YouTube
-                        content that regularly reaches <b>100K+ views</b>.
-                      </li>
-                    </ul>
-                  </div>
+                    <div class="dates">June 2017 – Present</div>
                 </div>
-                <div class="mb-5">
-                  <b>Progress Software / Telerik</b>
-                  <div class="level has-text-weight-bold is-size-7 is-mobile">
-                    <div class="level-left">
-                      <div class="level-item">
-                        <p>Director of Developer Relations</p>
-                      </div>
-                    </div>
-                    <div class="level-right">
-                      <div class="level-item">
-                        <p>September 2011 - June 2017</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="content">
+                <div class="job-description">
                     <ul>
-                      <li>
-                        Leading team of 11 developer advocates covering
-                        Telerik's entire portfolio of tools and frameworks,
-                        including Developer Tools and SaaS offerings.
-                      </li>
-                      <li>
-                        Co-creator of the
-                        <a href="http://developer.telerik.com"
-                          >Telerik Developer Network</a
-                        >
-                        site and community which is now the thrid largest
-                        contributor to the developer trial journey.
-                      </li>
-                      <li>
-                        Responsible for planning and executing on all
-                        initiatives to build and cultivate the Telerik
-                        community.
-                      </li>
-                      <li>
-                        Drove 6x growth in downloads for
-                        <a href="http://www.nativescript.org">NativeScript</a>
-                        project to <b>6x growth</b> (downloads) over 8 months.
-                      </li>
-                      <li>
-                        Oversee new product launches and align developer
-                        programs with Marketing, Sales and Demand Generation.
-                      </li>
+                        <li><strong>GTM leadership (Microsoft × GitHub):</strong> Drove launches for Copilot Free Tier, Agent Mode, and CLI/SDK—aligning narrative, channels, and creators from planning through launch.</li>
+                        <li><strong>People leadership:</strong> Managed and scaled a DevTools advocacy team (4 direct reports), setting OKRs, coaching execution, and leading multi-quarter launch cycles.</li>
+                        <li><strong>Program building:</strong> Authored team charters, strategy briefs, and content playbooks that standardized how DevRel plans, ships, and measures GTM for AI tooling.</li>
+                        <li><strong>Platform & keynotes:</strong> Built and delivered keynote content for Microsoft Build, VS Code Day, and GitHub Universe; scripted executive demos for Copilot launches.</li>
+                        <li><strong>Scale & community:</strong> Helped grow VS Code from 6M to 40M users; produced flagship events (VS Code Day: 20K+ registrants) and creator activations.</li>
                     </ul>
-                  </div>
                 </div>
-                <div class="mb-5">
-                  <b>Prior Roles (2003–2011)</b>
-                  <div class="content">
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Director of Developer Relations</div>
+                        <div class="company">Progress Software / Telerik</div>
+                    </div>
+                    <div class="dates">Sep 2011 – June 2017</div>
+                </div>
+                <div class="job-description">
                     <ul>
-                      <li>
-                        <strong>O'Charley's Inc</strong> — Sr. Programmer
-                        Analyst
-                      </li>
-                      <li>
-                        <strong>Speakerheart</strong> — Sr. Software Engineer
-                      </li>
-                      <li>
-                        <strong>Ardent Health Services</strong> — Manager,
-                        Collaborative Development
-                      </li>
-                      <li>
-                        <strong>Sara Lee Foods</strong> — Integration Analyst
-                      </li>
+                        <li><strong>Led DevRel at scale:</strong> Managed a team of 11 developer advocates across Kendo UI (7M+ downloads), NativeScript, and SaaS developer tools.</li>
+                        <li><strong>Built conversion-driving content:</strong> Co-created Telerik Developer Network; became the 3rd largest contributor to product trial conversions.</li>
+                        <li><strong>Drove adoption:</strong> Led advocacy program delivering 600% growth in NativeScript downloads over 8 months.</li>
                     </ul>
-                    <p>
-                      Led and contributed to enterprise software projects across
-                      healthcare, retail, and food manufacturing. Focused on
-                      platform migrations, internal tooling, and business
-                      systems integration. Mentored developers and transitioned
-                      teams to modern technologies including .NET and
-                      service-oriented architectures.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Senior Engineering & Analyst Roles</div>
+                        <div class="company">O'Charley's, Speakerheart, Ardent Health, Sara Lee</div>
+                    </div>
+                    <div class="dates">2003 – 2011</div>
+                </div>
+                <div class="job-description">
+                    <p class="job-note">
+                        Led enterprise software projects across healthcare, retail, and food manufacturing. Focused on platform migrations, internal tooling, and modernizing teams.
                     </p>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div id="education">
-            <div class="columns is-desktop mt-3">
-              <div class="column is-2 pb-0">
-                <p class="is-size-4 has-text-info-dark">Education</p>
-              </div>
-              <div class="column">
-                <b>University Of Tennessee at Martin class of 2002</b>
-                <p>Bachelors of Science, Business Administration</p>
-                <p><b>Major: </b>Information Systems</p>
-              </div>
-            </div>
-          </div>
         </section>
-      </div>
-    </div>
-  </body>
+
+        <section class="main-section">
+            <h3 class="section-title"><i class="fas fa-pen-nib"></i> Publications & Media</h3>
+            <div class="job-description">
+                <ul>
+                    <li><strong>Writing:</strong> Published author on major developer publications; topics include GitHub Copilot, VS Code, AI-assisted coding, prompt engineering, and LLM models.</li>
+                    <li><strong>Education content:</strong> Built Microsoft Learn video courses on GitHub Copilot, VS Code, Dev Containers, and AI-assisted developer workflows.</li>
+                    <li><strong>Video & community:</strong> Grew the Microsoft Developer YouTube channel from 20K to 900K subscribers; pioneered Microsoft’s most successful short-form developer channel; hosted the VS Code release livestreams.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="main-section">
+            <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+            <div class="experience-item plain">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title edu">B.S. Business Administration / Information Systems</div>
+                        <div class="company">University of Tennessee at Martin</div>
+                    </div>
+                    <div class="dates">2002</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<footer class="resume-footer">
+    <strong>Online:</strong> <a href="https://burkeholland.github.io/resume/">burkeholland.github.io/resume</a> | 
+    <strong>Research:</strong> <a href="https://github.com/burkeholland">github.com/burkeholland</a>
+</footer>
+
+</body>
 </html>
